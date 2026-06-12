@@ -2,6 +2,8 @@
 
 App web sencilla para control horario interno de menos de 10 trabajadores.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/360proyectoscc-source/control-horario)
+
 ## Funciones
 
 - Fichaje de entrada, pausa, reanudacion y salida.
