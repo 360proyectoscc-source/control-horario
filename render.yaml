@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: control-horario
+    runtime: python
+    plan: starter
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+    buildCommand: "python --version"
+    startCommand: "python -m control_horario_app.server"
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: CONTROL_HORARIO_DATA_DIR
+        value: /var/data
+      - key: SESSION_SECRET
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_PIN
+        sync: false
+    disk:
+      name: control-horario-data
+      mountPath: /var/data
+      sizeGB: 1
